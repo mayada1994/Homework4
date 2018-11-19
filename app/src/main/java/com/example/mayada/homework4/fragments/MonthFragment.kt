@@ -6,6 +6,7 @@ import android.support.v7.widget.LinearLayoutManager
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.example.mayada.homework4.CustomItemDecoration
 import com.example.mayada.homework4.Item
 import com.example.mayada.homework4.R
 import kotlinx.android.synthetic.main.month_fragment.view.*
@@ -16,7 +17,7 @@ class MonthFragment : Fragment() {
         val view = inflater.inflate(R.layout.month_fragment, container, false)
         val recyclerView = view.month_recycler_view
         val layoutManager = LinearLayoutManager(context)
-        val items:ArrayList<Item> = ArrayList()
+        val items: ArrayList<Item> = ArrayList()
         items.add(Item("January", -1))
         items.add(Item("February", -1))
         items.add(Item("March", -1))
@@ -32,6 +33,7 @@ class MonthFragment : Fragment() {
         val adapter = ItemAdapter(items)
         recyclerView.layoutManager = layoutManager
         recyclerView.adapter = adapter
+        recyclerView.addItemDecoration(CustomItemDecoration(this.context!!))
         return view
     }
 }
