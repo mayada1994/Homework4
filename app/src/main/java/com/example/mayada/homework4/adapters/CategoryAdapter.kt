@@ -28,7 +28,7 @@ class CategoryAdapter(
 
     override fun getPageTitle(position: Int): CharSequence? {
 
-        return return when (position) {
+        return when (position) {
             0 -> mContext.getString(R.string.category_week_days)
             1 -> mContext.getString(R.string.category_months)
             else -> mContext.getString(R.string.category_zodiac_signs)
